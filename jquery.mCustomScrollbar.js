@@ -1150,9 +1150,16 @@ and dependencies (minified).
 				}
 			}
 			if(!d.overflowed[0] && !d.overflowed[1]){
-				$this.addClass(classes[5]);
-			}else{
-				$this.removeClass(classes[5]);
+                if (!$this.data("justAdded5")) {
+                    $this.addClass(classes[5]);
+                    $this.data("justAdded5", true);
+                }
+            } else {
+                if (!$this.data("justAdded5")) {
+                    $this.removeClass(classes[5]);
+                } else {
+                    $this.data("justAdded5", false);
+                }
 			}
 		},
 		/* -------------------- */
